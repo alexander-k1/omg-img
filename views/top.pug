@@ -1,0 +1,29 @@
+body
+  div.container#page-wrapper
+    div.container#top
+      div#logo
+        span.logo-letter O
+        span.logo-letter M
+        span.logo-letter G
+        span.logo-letter -
+        span.logo-letter i
+        span.logo-letter m
+        span.logo-letter g
+      if authenticated
+        div#logout(title="Log out")
+          a(href="/logout")
+            i(class="fas fa-door-open fa-2x")
+            i(class="fas fa-door-closed fa-2x")
+      div#side-menu
+        if !authenticated
+          div#main-page-link
+            a(href="/") Main page
+          div#login-link
+            a(href="/auth/github") Login with 
+              br
+              img#github1(src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" height="20px")
+        else
+          div#main-page-link
+            a(href="/") Main page
+          div#profile-link
+            a(href="/profile") Profile

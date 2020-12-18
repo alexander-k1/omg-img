@@ -1,0 +1,344 @@
+#add-title, #your-images {
+  font-family: "Architecs Daughter", cursive;
+  font-size: 1.7em;
+}
+#add-action,
+#add-action input,
+#add-action button {
+  font-family: "Itim", cursive;
+}
+#add-url {
+  font-size: 1.2em;
+}
+#add-title,
+#add-action,
+#add-url,
+#add-file, #your-images {
+  text-align: center;
+  margin: 1em !important;
+}
+
+#add-url input[type="submit"] {
+  font-size: 0.9em;
+  border: 1px solid #3083dc;
+  border-radius: 3px;
+  background-color: rgba(48, 131, 220, 0.4);
+  margin: 0.2em !important;
+}
+#add-url input[type="url"] {
+  font-size: 0.9em;
+  background-color: rgba(48, 131, 220, 0.2);
+  border-radius: 3px;
+  border: 1px solid #3083dc;
+  width: 50%;
+  margin: 0.3em;
+}
+@media only screen and (min-width: 600px) {
+  #add-url input[type="submit"] {
+    margin: inherit;
+  }
+  #add-url,
+  #add-file {
+    width: 65%;
+  }
+}
+@media only screen and (min-width: 1155px) {
+  #add-url,
+  #add-file {
+    width: 40%;
+  }
+  #add-action {
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-evenly;
+    align-items: baseline !important;
+  }
+}
+
+#my-awesome-dropzone button {
+  background-color: rgba(48, 131, 220, 0.2);
+  width: 100%;
+  height: 6em;
+  border: 5px solid #3083dc;
+  border-radius: 10px;
+  font-size: 1.2em;
+}
+#add-action {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.dz-preview {
+  margin: 1em;
+}
+.dz-image img{
+  box-shadow: 2px 2px 5px #3083DC, -2px -2px 5px #3083DC, -2px 2px 5px #3083DC, 2px -2px 5px #3083DC;
+  border: 0px solid transparent;
+  border-radius: 5px;
+}
+.dz-success-mark, .dz-error-mark {
+  display: none;
+}
+* {
+  margin: 0;
+}
+#top {
+  border-bottom: 15px solid black;
+}
+#page-wrapper, .container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #F8FFE5;
+  position: relative
+}
+#top {
+  width: 100%;
+  text-align: center;
+  height: auto;
+  background-color: #3083DC;
+  position: relative;
+}
+#logo {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 3em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  letter-spacing: 0.1em;
+}
+
+#login-link, #profile-link, #main-page-link {
+  padding-bottom: 1em;
+  font-family: 'Itim', cursive;
+}
+#login-link a {
+  color: black;
+}
+#profile-link a, #login-link a, #main-page-link a {
+  text-decoration: none;
+  font-size: 1.4em;
+}
+#profile-link a,  #main-page-link a {
+  color: #F8FFE5;
+  text-shadow: 2px 2px #000;
+}
+#login-link {
+  border: 2px solid #000;
+  border-radius: 3px;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  display: inline-block;
+  margin-bottom: 1em;
+}
+#profile-link a:hover, #main-page-link a:hover {
+  text-shadow: 4px 4px #000;
+}
+#logout {
+  z-index: 1;
+}
+.fa-door-open {
+  display: none !important;
+}
+#logout a {
+  color: #000;
+}
+#logout:hover .fa-door-closed {
+  display: none;
+}
+#logout:hover .fa-door-open {
+  display: inline !important;
+}
+@media only screen and (min-width: 750px) {
+  #side-menu {
+    position: absolute;
+    right: 1em;
+    top: 1.25em;
+    display: flex;
+    margin-top: 0 !important;
+  }
+  #profile-link, #main-page-link {
+    padding-top: 1.5em;
+    padding-right: 0.5em;
+    margin-left: 1em;
+  }
+  #logout {
+    position: absolute;
+    top: 0.5em;
+    right: 1.5em;
+  }
+}
+#side-menu {
+  margin-top: 1em;
+}
+:root {
+  --width1: 200px;
+  --width2: 410px;
+}
+body {
+  background-color: #e3e9fa;
+}
+.grid {
+  margin: 2em auto;
+}
+.grid-sizer {
+  width: var(--width1);
+}
+.grid-item {
+  position: relative;
+  width: var(--width1) !important;
+  transition: all 0.4s ease-in;
+  margin-bottom: 10px;
+  display: block;
+  /*background-color: #3083DC;*/
+}
+.grid-item--width2 { width: var(--width2) !important; }
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 30px;
+  transition: border-radius 0.4s ease-in;
+}
+.info {
+  display: none;
+  padding: 0.7em 0.5em;
+  margin: 0 !important;
+  font-family: "Architects daughter", cursive;
+  border-radius: 30px 10px 30px 10px;
+  box-shadow: 2px 2px 3px black;
+  border: 0px solid transparent;
+  background-image: linear-gradient(#3083dc, #6496e2, #88aae8, #a8bfee);
+}
+.grid-item:hover .info {
+  display: block;
+}
+.grid-item:hover img {
+  border-radius: 10px;
+  filter: brightness(1.2);
+}
+.grid-item:hover {
+  z-index: 1;
+  transform: scale(1.05);
+}
+.avatar img {
+  width: 30px;
+  display: inline-block;
+}
+.avatar {
+  display: flex;
+  align-items: center;
+}
+.info a {
+  text-decoration: none;
+  color: black;
+  padding: 0.1em;
+  font-size: 1.2em;
+}
+.modal {
+  font-family: "Itim", cursive;
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 370px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 1em;
+  background-color: #3083DC;
+  border: 15px solid black;
+  border-radius: 15px;
+}
+#delete-img-form {
+  margin-bottom: 2em;
+  font-size: 1.2em;
+}
+#delete-img-form h4 {
+  font-family: "Architects daughter", cursive;
+}
+#question-mark {
+  position: relative;
+  top: -70px;
+  transition: all 0.7s ease-in-out;
+}
+.btn {
+  background-color: black;
+  border: 0px solid transparent;
+  height: 2em;
+  margin: auto 1em;
+  color: whitesmoke;
+  font-family: "Architects daughter", cursive;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.delete-img span {
+  cursor: pointer;
+}
+.page-nav {
+  text-align: center;
+  margin: auto;
+  font-family: 'Itim', cursive;
+  margin-top: 2em;
+  padding-bottom: 2em;
+  display: flex;
+  justify-content: center;
+}
+.page-nav a {
+  text-decoration: none;
+  font-size: 1.4em;
+  margin: 1em;
+  color: black;
+  text-shadow: 2px 2px #3083DC;
+  padding-bottom: 0.4em;
+  position: relative;
+  width: 110px;
+  height: 28px;
+  display: inline-block;
+}
+.page-nav a::after {
+  content: "";
+  border: 0px solid transparent;
+  width: 110px;
+  height: 28px;
+  border-radius: 10px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-image: linear-gradient(to bottom left, rgba(48,131,220, 0.1), rgba(48,131,220, 0.4), rgba(48,131,220, 0.7));
+  z-index: -1;
+}
+.page-nav a:first-child::after{
+  background-image: linear-gradient(to bottom right, rgba(48,131,220, 0.1), rgba(48,131,220, 0.4), rgba(48,131,220, 0.7));
+}
+.page-nav a:hover::after {
+  height: 34px;
+  top: -3px;
+  background-image: linear-gradient( rgba(48,131,220, 0.2), rgba(48,131,220, 0.6), rgba(48,131,220, 0.9));
+}
+#user-images {
+  font-family: "Architecs Daughter", cursive;
+  font-size: 1.7em;
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+}
+#user-images span {
+  margin-left: 0.5em;
+}
+#grid-div {
+  /*visibility: hidden;*/
+}

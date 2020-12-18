@@ -1,0 +1,44 @@
+script.
+  function addClass(img) {
+    if (img.width > img.height) {
+      img.parentNode.parentNode.classList.add("grid-item--width2");
+    }
+  }
+//-var numpages = 3;
+//-var currentpagenum = 2;
+-var nextpagenum = currentpagenum + 1;
+-var prevpagenum = currentpagenum - 1;
+//-var images = [{url: "https://cdn.pixabay.com/photo/2020/08/30/11/17/pumpkin-5529221_960_720.png", urlmedium: "https://cdn.pixabay.com/photo/2020/08/30/11/17/pumpkin-5529221_960_720.png", username: "Github user", userid: "123456", imageid: "1", horiz: false, avatar: "https://avatars3.githubusercontent.com/u/57618395?v=4"}, {url: "https://cdn.pixabay.com/photo/2019/10/28/21/21/halloween-4585684_960_720.jpg", urlmedium: "https://cdn.pixabay.com/photo/2019/10/28/21/21/halloween-4585684_960_720.jpg", username: "Github user", userid: "123456", imageid: "2", horiz: true, avatar: "https://avatars3.githubusercontent.com/u/57618395?v=4"}, {url: "https://cdn.pixabay.com/photo/2020/08/30/11/17/pumpkin-5529221_960_720.png", urlmedium: "https://cdn.pixabay.com/photo/2020/08/30/11/17/pumpkin-5529221_960_720.png", username: "Github user", userid: "123456", imageid: "3", horiz: false, avatar: "https://avatars3.githubusercontent.com/u/57618395?v=4"}, {url: "https://cdn.pixabay.com/photo/2019/10/28/21/21/halloween-4585684_960_720.jpg", urlmedium: "https://cdn.pixabay.com/photo/2019/10/28/21/21/halloween-4585684_960_720.jpg", username: "Github user", userid: "123456", imageid: "4", horiz: true, avatar: "https://avatars3.githubusercontent.com/u/57618395?v=4"}, {url: "https://cdn.pixabay.com/photo/2020/08/30/11/17/pumpkin-5529221_960_720.png", urlmedium: "https://cdn.pixabay.com/photo/2020/08/30/11/17/pumpkin-5529221_960_720.png", username: "Github user", userid: "123456", imageid: "5", horiz: false, avatar: "https://avatars3.githubusercontent.com/u/57618395?v=4"}, {url: "https://cdn.pixabay.com/photo/2019/10/28/21/21/halloween-4585684_960_720.jpg", urlmedium: "https://cdn.pixabay.com/photo/2019/10/28/21/21/halloween-4585684_960_720.jpg", username: "Github user", userid: "123456", imageid: "6", horiz: true, avatar: "https://avatars3.githubusercontent.com/u/57618395?v=4"}, {url: "https://cdn.pixabay.com/photo/2020/08/30/11/17/pumpkin-5529221_960_720.png", urlmedium: "https://cdn.pixabay.com/photo/2020/08/30/11/17/pumpkin-5529221_960_720.png", username: "Github user", userid: "123456", imageid: "7", horiz: false, avatar: "https://avatars3.githubusercontent.com/u/57618395?v=4"}, {url: "https://cdn.pixabay.com/photo/2019/10/28/21/21/halloween-4585684_960_720.jpg", urlmedium: "https://cdn.pixabay.com/photo/2019/10/28/21/21/halloween-4585684_960_720.jpg", username: "Github user", userid: "123456", imageid: "8", horiz: true, avatar: "https://avatars3.githubusercontent.com/u/57618395?v=4"}, {url: "https://cdn.pixabay.com/photo/2020/08/30/11/17/pumpkin-5529221_960_720.png", urlmedium: "https://cdn.pixabay.com/photo/2020/08/30/11/17/pumpkin-5529221_960_720.png", username: "Github user", userid: "123456", imageid: "9", horiz: false, avatar: "https://avatars3.githubusercontent.com/u/57618395?v=4"}, {url: "https://cdn.pixabay.com/photo/2019/10/28/21/21/halloween-4585684_960_720.jpg", urlmedium: "https://cdn.pixabay.com/photo/2019/10/28/21/21/halloween-4585684_960_720.jpg", username: "Github user", userid: "123456", imageid: "10", horiz: true, avatar: "https://avatars3.githubusercontent.com/u/57618395?v=4"}];
+div(class="modal" id="delete-image")
+  div(class="modal-content")
+    div#delete-img-form
+      h4 Delete this image
+      span Are you sure you want to delete this image
+      span#question-mark ?
+    div.affirm-or-negat
+      button(type="button" class="btn" onclick="postDelete()") Delete
+      button(type="button" class="btn" onclick="clickCancelDelete()") Cancel
+div.grid
+  div.grid-sizer
+  each val in images
+    div.grid-item
+      a(href= val.url target="_blank")
+        img(onload="addClass(this)" src= val.urlmedium onerror="imgError(this)" class="omg-img")
+      if currentpage != '/profile'
+        div.info
+          div.avatar
+            img(src= val.avatar)
+            a(href= "/user/" + val.userid)= val.username
+      else
+        div.info
+          div(class="delete-img" id= val.imageid)
+            i(class="fas fa-trash-alt")
+            span(onclick= "openDelete(this)")  Delete
+div.page-nav
+  if currentpagenum > 1 && currentpagenum <= numpages
+    a(href= currentpage + '?page=' + prevpagenum) Previous
+  if currentpagenum < numpages && currentpagenum >= 1
+    a(href= currentpage + '?page=' + nextpagenum) Next
+script(src="/public/top.js")
+script(src="/public/content.js")
+
